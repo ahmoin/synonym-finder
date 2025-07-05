@@ -3,6 +3,7 @@ const {
   ActionRowBuilder,
   ButtonBuilder,
   ButtonStyle,
+  MessageFlags,
 } = require("discord.js");
 
 module.exports = {
@@ -22,7 +23,7 @@ module.exports = {
     }
     const clickedWord = interaction.customId;
 
-    await interaction.deferUpdate();
+    await interaction.deferUpdate({ flags: MessageFlags.Ephemeral });
 
     const findCommand = interaction.client.commands.get("find");
     if (!findCommand || !findCommand.fetchAndFormatSynonyms) {
