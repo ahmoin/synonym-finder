@@ -8,7 +8,7 @@ const {
 const fetch = require("node-fetch");
 
 async function fetchAndFormatSynonyms(wordToFind) {
-  const prompt = `5 synonyms for the word "${wordToFind}" separated by |, and on 1 line, no additional text`;
+  const prompt = `5 synonyms for "${wordToFind}" separated by |, and on 1 line, no additional text`;
 
   const response = await fetch("https://ai.hackclub.com/chat/completions", {
     method: "POST",
